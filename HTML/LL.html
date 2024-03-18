@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #linked-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        .node {
+            background-color: #3498db;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .node:last-child {
+            margin-right: 0;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Linked List</h2>
+    <div id="linked-list"></div>
+    <button onclick="addNode()">Add Node</button>
+    <button onclick="deleteNode()">Delete Node</button>
+    <script>
+        class Node {
+            constructor(data) {
+                this.data = data;
+                this.next = null;
+            }
+        }
+
+        class LinkedList {
+            constructor() {
+                this.head = null;
+            }
+
+            addNode(data) {
+                const newNode = new Node(data);
+                if (!this.head) {
+                    this.head = newNode;
+                } else {
+                    let current = this.head;
+                    while (current.next) {
+                        current = current.next;
+                    }
+                    current.next = newNode;
+                }
+                this.display();
+            }
+
+            deleteNode() {
+                if (!this.head) {
+                    console.log("List is empty");
+                    return;
+                }
+                if (!this.head.next) {
+                    this.head = null;
+                } else {
+                    let current = this.head;
+                    let prev = null;
+                    while (current.next) {
+                        prev = current;
+                        current = current.next;
+                    }
+                    prev.next = null;
+                }
+                this.display();
+            }
+
+            display() {
+                let current = this.head;
+                let result = "";
+                while (current) {
+                    result += `<div class="node">${current.data}</div>`;
+                    current = current.next;
+                }
+                document.getElementById('linked-list').innerHTML = result;
+            }
+        }
+
+        const linkedList = new LinkedList();
+
+        function addNode() {
+            const data = prompt("Enter data for new node:");
+            if (data !== null) {
+                linkedList.addNode(data);
+            }
+        }
+
+        function deleteNode() {
+            linkedList.deleteNode();
+        }
+    </script>
+</body>
+</html>
