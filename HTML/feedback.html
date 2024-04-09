@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/home.css" />
+    <title>Data Structure Visualizer</title>
+    <style>
+      /* CSS for select element */
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+}
+
+      select {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        width: 100%;
+        max-width: 300px; /* Adjust width as needed */
+      }
+      
+      /* CSS for option elements */
+      option {
+        padding: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo"><a href="#">Data Structure Visualizer</a></div>
+      <ul class="nav__links">
+        <li class="link"><a href="..//HTML/home.html">Home</a></li>
+        <li class="link"><a href="#">About Us</a></li>
+        <li class="link"><a href="#">Services</a></li>
+        <li class="link"><a href="#">Courses</a></li>
+        <li class="link"><a href="..//HTML/feedback.html">Feedback</a></li> 
+     
+        <li class="link"><a href="../HTML/index3.html" class="nav__btn">Register</a></li>
+      </ul>
+    </nav><center>
+    <h1>Feedback Form</h1>
+    <form action="submit_feedback.php" method="POST"> <!-- Assuming you have a PHP script to handle form submission -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</center>
+
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
